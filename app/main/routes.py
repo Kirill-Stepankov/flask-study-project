@@ -149,6 +149,17 @@ def messages():
                            next_url=next_url, prev_url=prev_url)
 
 
+@bp.route('/export_posts')
+@login_required
+def export_posts():
+    if current_user.get_task_in_progress('export_posts'):
+        flash('An export task is currently in progress')
+    else:
+        current_user.launch_task('export_posts', 'Exporting posts...')
+        db.session.commit()
+    return redirect(url_for('main.user', username=current_user.username))
+
+
 @bp.before_request
 def before_request():
     if current_user.is_authenticated:

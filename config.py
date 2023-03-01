@@ -17,3 +17,4 @@ class Config:
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['kirillstepankov17@gmail.com', 'kirillstepankov18@gmail.com']
     POSTS_PER_PAGE = 25
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
