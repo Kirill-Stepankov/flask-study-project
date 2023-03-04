@@ -1,1 +1,1 @@
-Web application written with python Flask framework.
+Web application written using the python Flask framework.
