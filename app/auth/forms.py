@@ -1,4 +1,7 @@
 from flask_wtf import FlaskForm
+def print_name(name: str) -> None:
+    print(name)
+
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from app.models import User
